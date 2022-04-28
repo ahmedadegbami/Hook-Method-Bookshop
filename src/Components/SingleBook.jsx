@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Card } from "react-bootstrap";
-import CommentArea from "./CommentArea";
+// import CommentArea from "./CommentArea";
 
 const SingleBook = (props) => {
-  const [selected, setSelected] = useState(false);
+  // const [selected, setSelected] = useState(false);
 
   return (
     <>
       <Card
         key={props.book.asin}
         className="m-1"
-        value={selected}
-        onClick={() => setSelected(!selected)}
-        style={{ border: selected ? "2px solid red " : "none" }}
+        // value={selected}
+        // onClick={() => setSelected(!selected)}
+        onClick={() => props.changeSelectedbook(props.book.asin)}
+        // style={{ border: selected ? "2px solid red " : "none" }}
       >
         <Card.Img
           variant="top"
@@ -23,7 +24,7 @@ const SingleBook = (props) => {
           <Card.Title className="wrapper">{props.book.title}</Card.Title>
         </Card.Body>
       </Card>
-      {selected && <CommentArea elementId={props.book.asin} />}
+      {/* {selected && <CommentArea elementId={props.book.asin} />} */}
     </>
   );
 };
